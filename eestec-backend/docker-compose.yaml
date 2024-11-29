@@ -1,0 +1,33 @@
+version: "3.11"
+services:
+  web:
+    build: .
+    links:
+      - "db"
+    ports:
+      - 5049:5049
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - SECRET_KEY=hrhr*0ydacw0^4627=7383wo5a!dajgbr&fkp6!nsq98ius0pw
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES = 30
+      - DATABASE_URL=postgresql+asyncpg://user:1234@db:5432/postgres
+    command: ["python", "main.py"]
+
+  db:
+    image: postgres:15
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: user
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "user"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+

@@ -1,0 +1,6 @@
+fastapi~=0.115.5
+uvicorn~=0.30.6
+pyjwt~=2.9.0
+pydantic~=2.5.3
+sqlalchemy~=2.0.36
+fastapi_users[sqlalchemy]==14.0.0

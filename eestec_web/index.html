@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/faq.css" rel="stylesheet">
+  <link href="css/about.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/partners.css">
+  <script>
+    window.onload = () => {
+      var token = localStorage.getItem("token");
+      if (token == null) { return; }
+      fetch("http://localhost:5049/api/me", {
+        method: "GET",
+        headers: {
+          "Accept": "application/json",
+          "Authorization": "Bearer " + token,
+        }
+      }).then((resp) => { return resp.json(); })
+        .then((resp) => {
+          if (resp.username === undefined) {
+            localStorage.clear();
+            return;
+          }
+          let element = document.getElementById("user-name");
+          element.innerText = "Welcome, " + resp.username;
+          element.style.visibility = "visible";
+          document.getElementById("to-login-block").style.visibility = "hidden";
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <div id="navbar">
+    <header>
+      <div class="logo">
+          <img src="resources/EESTech Challenge Logo.svg" alt="Logo">
+      </div>
+      <div class="nav_head">
+        <p id="user-name" style="visibility: hidden;"></p>
+        <a href="#main">Главная</a>
+        <a href="#about">О хакатоне</a>
+        <a href="#theme">Тематика этого года</a>
+        <a href="#organizers">Организаторы</a>
+        <a href="#partners">Партнёры</a>
+        <a href="#faq">ЧаВо</a>
+          <a href="#faq">ЧаВо</a>
+      </div>
+    </header>
+
+    <div class="underline_head">
+    </div>
+  </div>
+
+  <div id="main">
+    <main>
+        <div class="main_block">
+            <div class="upper">
+                <p><span class="blue_gradient">#</span>ReadyForThe<span class="blue_gradient">Challenge?</span></p>
+            </div>
+            <div class="middle">
+                <p>Регистрируйся на локальный раунд хакатона EESTech <br> 
+                    Challenge и прими участие в крупнейшем соревновании для <br> 
+                    студентов-инженеров в Европе!</p>
+                <a href="register.html">
+                  Регистрация
+                  <svg style="margin-left: 7px;" width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.875 0.125L8.89187 1.08269L14.1031 6.3125H0.25V7.6875H14.1031L8.89187 12.8939L9.875 13.875L16.75 7L9.875 0.125Z" fill="#ECF7FD"/>
+                  </svg>
+                </a>
+            </div>
+            <div id="to-login-block" class="middle">
+              <p>Уже зарегистрировался?</p>
+              <a href="login.html">
+                Войти
+                <svg style="margin-left: 7px;" width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.875 0.125L8.89187 1.08269L14.1031 6.3125H0.25V7.6875H14.1031L8.89187 12.8939L9.875 13.875L16.75 7L9.875 0.125Z" fill="#ECF7FD"/>
+                </svg>
+              </a>
+          </div>
+            <div class="lower">
+                <div>
+                    <p><span class="blue_gradient">200k</span></p>
+                    <p>Призовой фонд</p>
+                </div>
+                <div>
+                    <p><span class="blue_gradient">200+</span></p>
+                    <p>Участников в прошлом году</p>
+                </div>
+                <div>
+                    <p><span class="blue_gradient">20+</span></p>
+                    <p>Команд в прошлом году</p>
+                </div>
+                <div>
+                    <p><span class="blue_gradient">4</span></p>
+                    <p>Года проводится хакатон</p>
+                </div>
+            </div>
+        </div>
+    </main>
+  </div> 
+
+  <div id="about">
+    <header>
+    <h1>
+      <span class="white">Про</span>
+      <span class="blue">EESTech</span>
+      <span class="blue">Challenge</span>
+    </h1>
+    </header>
+    <main> 
+      <article>
+        <p>EESTech Challenge или EESTEC Technology Challenge — это ежегодные
+          международные студенческие соревнования, организуемые EESTEC. Его
+          цель – создать возможности для европейских студентов получить знания и
+          практический опыт в области электротехники и информатики, а также
+          развивать профессиональные сети. Тема конкурса EESTech Challenge
+          меняется каждый год и раскрывается на церемонии открытия. Конкурс
+          разделен на несколько локальных раундов, которые организуются
+          различными комитетами EESTEC по всей Европе. Команда-победитель
+          каждого локального раунда затем переходит в финальный раунд! Конкурс
+          завершается церемонией закрытия.</p>
+      </article>
+      <aside>
+        <img src="resources/almaz1.png" alt="Рисунок алмаза" id="almaz">
+      </aside>
+    </main>
+  </div>
+
+  <div id="theme">
+    <header>
+      <h1 class="header-text">
+        <span class="white">Тематика этого года -</span><br>
+        <span class="blue">Electrical Circuit</span><br>
+        <span class="blue">for Industry 4.0</span>
+      </h1>
+    </header>
+    <main>
+      <aside>
+        <img src="resources/almaz2.png" alt="Рисунок алмаза" id="almaz">
+      </aside>
+      <article>
+        <p>EESTech Challenge или EESTEC Technology Challenge — это ежегодные
+          международные студенческие соревнования, организуемые EESTEC. Его
+          цель – создать возможности для европейских студентов получить знания
+          и практический опыт в области электротехники и информатики, а также
+          развивать профессиональные сети. Тема конкурса EESTech Challenge
+          меняется каждый год и раскрывается на церемонии открытия.</p>
+        <button class="more-button">
+            Подробнее
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.375 0.125L9.39187 1.08269L14.6031 6.3125H0.75V7.6875H14.6031L9.39187 12.8939L10.375 13.875L17.25 7L10.375 0.125Z" fill="#ECF7FD"/>
+            </svg>
+        </button>
+      </article>
+    </main>
+  </div>
+
+  <div id="organizers">
+    <section class="orgs">
+      <div class="partners-title">
+        Организаторы
+      </div>
+      <div class="image-container">
+        <img src="resources/2024-11-15 20.56.33.jpg" alt="Tilted Left" class="tilted-left">
+        <img src="resources/2024-11-15 20.56.43.jpg" alt="Straight" class="straight">
+        <img src="resources/2024-11-15 20.56.47.jpg" alt="Tilted Right" class="tilted-right">
+      </div>
+
+      <div class="orgs-text">
+        Electrical Engineering STudents' European assoCiation — это международная организация, находящаяся в более чем 20 городах Европы! EESTEC объединяет в себе студентов-энергетиков и программистов, а сообщество в Санкт-Петербурге ему с этим помогает      </div>
+    </section>
+  </div>
+
+  <div id="partners">
+    <div class="container">
+      <h1>Партнеры</h1>
+      <div class="partner">
+        <div class="text">
+          <p>
+            <span class="highlight">Lorem ipsum</span> – dolor sit amet,
+            consectetur adipiscing elit. Mauris fermentum nunc a purus pulvinar,
+            sit amet efficitur erat consequat. Nam sed enim non metus iaculis
+            blandit.
+          </p>
+        </div>
+        <div class="logo">
+          <img src="resources/logo.png" alt="eestec LC St. Petersburg" />
+        </div>
+      </div>
+      <div class="partner">
+        <div class="logo">
+          <img src="resources/logo.png" alt="eestec LC St. Petersburg" />
+        </div>
+        <div class="text">
+          <p>
+            <span class="highlight">Lorem ipsum</span> – dolor sit amet,
+            consectetur adipiscing elit. Mauris fermentum nunc a purus pulvinar,
+            sit amet efficitur erat consequat. Nam sed enim non metus iaculis
+            blandit.
+          </p>
+        </div>
+      </div>
+      <div class="partner">
+        <div class="text">
+          <p>
+            <span class="highlight">Lorem ipsum</span> – dolor sit amet,
+            consectetur adipiscing elit. Mauris fermentum nunc a purus pulvinar,
+            sit amet efficitur erat consequat. Nam sed enim non metus iaculis
+            blandit.
+          </p>
+        </div>
+        <div class="logo">
+          <img src="resources/logo.png" alt="eestec LC St. Petersburg" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div id="faq">
+    <p id="faq-header"><span>Ча</span>сто задаваемые <span>во</span>просы</p>
+    <div class="faq-columns-container">
+      <div class="faq-column">
+          <div class="accordion-item">
+              <div class="accordion-header">Как будет проходить хакатон?</div>
+              <div class="accordion-content"><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-header">Предоставляете ли вы оборудование?</div>
+              <div class="accordion-content"><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>
+          </div>
+        
+          <div class="accordion-item">
+              <div class="accordion-header">Я могу участвовать один?</div>
+              <div class="accordion-content"><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>
+          </div>
+      </div>
+      <div class="faq-column">
+          <div class="accordion-item">
+              <div class="accordion-header">Где посмотреть отборочные задания?</div>
+              <div class="accordion-content"><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-header">Сколько стоит участие?</div>
+              <div class="accordion-content"><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-header">Будут ли призы?</div>
+              <div class="accordion-content"><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="sub_foot">
+        <div class="logo_foot">
+            <img src="resources/EESTech Challenge Saint P Frame 33.svg" alt="Logo">
+        </div>
+        <div class="info_foot">
+            <div class="nav_foot">
+                <a href="#main">Главная</a>
+                <a href="#about">О хакатоне</a>
+                <a href="#theme">Тематика этого года</a>
+                <a href="#organizers">Организаторы</a>
+            </div>
+            <div class="social-links">
+                <a href="#">
+                    <img src="resources/Telegram Icon.svg" alt="TG link logo">
+                </a>
+                <a href="#">
+                    <img src="resources/VK 1.1.svg" alt="">
+                </a>
+                <a href="#">
+                    <img src="resources/Email Icon EESTech Challenge.svg" alt="">
+                </a>
+            </div>
+            <div class="copyright">
+                Copyright © EESTEC LC St. Petersburg
+            </div>
+        </div>
+    </div>
+  </footer>
+  
+  <script src="js/faq.js"></script>
+</body>
+</html>

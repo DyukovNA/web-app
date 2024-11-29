@@ -1,0 +1,101 @@
+.container {
+    background-color: #113B60;
+}
+#main {
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-top: 8vh;
+}
+#main p {
+    margin: 0;
+}
+
+#main .blue_gradient {
+    /* color: aqua; */
+    background: linear-gradient(to right, #52BDE9 0%, #0E83D7 52%, #036CAD 99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Логотип и меню */
+#main header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: rgb(22, 156, 240) solid 3px;
+    margin: 16px 100px;
+    margin-bottom: 90px;
+}
+
+#main .logo {
+    width: 50%;
+}
+#main .menu {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#main .menu p{
+    align-self: center;
+}
+
+/* основная часть */
+
+#main main {
+    padding-bottom: 100px;
+}
+
+
+.main_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lower {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.upper {
+    font-size: 75px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.middle {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.middle p {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+.middle a {
+    background: linear-gradient(to right, #52BDE9 0%, #0E83D7 52%, #036CAD 99%);
+    /* background-color: aqua; */
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: white;
+    font-size: calc(1vw + 10px);
+    font-family: inherit;
+    text-align: center;
+    text-decoration: none;
+}
+
+.lower div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lower div .blue_gradient {
+    font-size: 50px;
+    font-weight: 500;
+}

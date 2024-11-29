@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #113B60;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  
+  #login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 50px 20px;
+  }
+  
+  .rectangle {
+    width: 55vh;
+    height: 54vh;
+    background-color: #ECF7FD;
+    border-radius: 20px;
+  
+    padding: 12% 9%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 100%;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #344054;
+  }
+  
+  #password-label-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+    width: 100%;
+  }
+  #forgot-href {
+    font-size: 14px;
+    text-decoration: none;
+    color: #1570EF;
+  }
+  .data-input {
+    background-color: #ECF7FD;
+    transition: border-color 0.3s;
+    border: 2px solid #D0D5DD;
+    border-radius: 5px;
+    padding: 1vh;
+    font-size: 11px;
+    color: light-gray;
+    width: 100%;
+  }
+  
+  .data-input:focus, .data-input:focus {
+    border-color: lightblue;
+    outline: none;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 9px;
+    top: 58%;
+    cursor: pointer;
+  }
+  
+  .input-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  
+  #login-button {
+    border-radius: 5px;
+    background-color: #1570EF;
+    border: none;
+    width: 100%;
+    padding: 1vh;
+    color: white;
+    cursor: pointer;
+    transition: box-shadow .218s;
+  }
+  
+  #login-button:hover {
+    -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  }
+  
+  #register-href {
+    color: gray;
+    align-self: center;
+    text-align: center;
+    font-size: 13px;
+  }
+  #register-href > a {
+    color: #1570EF;
+    text-decoration: none;
+  }
+  
+  .gsi-material-button {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-appearance: none;
+    margin-top: 7px;
+    background-color: #D1E9FF;
+    background-image: none;
+    border: none;
+    -webkit-border-radius: 4px;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #1570EF;
+    cursor: pointer;
+    font-family: 'Roboto', arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+    overflow: hidden;
+    padding: 1vh 12px;
+    position: relative;
+    text-align: center;
+    -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+    transition: background-color .218s, border-color .218s, box-shadow .218s;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+    min-width: min-content;
+  }
+  
+  .gsi-material-button .gsi-material-button-icon {
+    height: 15px;
+    min-width: 15px;
+    width: 15px;
+  }
+  
+  .gsi-material-button .gsi-material-button-content-wrapper {
+    -webkit-align-items: center;
+    align-items: center;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
+  
+  .gsi-material-button .gsi-material-button-contents {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    font-family: 'Roboto', arial, sans-serif;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+  }
+  
+  .gsi-material-button .gsi-material-button-state {
+    -webkit-transition: opacity .218s;
+    transition: opacity .218s;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .gsi-material-button:not(:disabled):hover {
+    -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  }
+  
+  .gsi-material-button:not(:disabled):hover .gsi-material-button-state {
+    background-color: #001d35;
+    opacity: 8%;
+  }
+  
+  

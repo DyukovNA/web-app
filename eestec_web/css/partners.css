@@ -1,0 +1,53 @@
+#partners {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  margin-top: 7vw;
+  margin-bottom: 7vw;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.container {
+  width: 1473px;
+  text-align: center;
+  background: none;
+}
+
+h1 {
+  font-size: 128px;
+  font-weight: 500;
+  font-stretch: condensed;
+  margin-bottom: 25px;
+}
+
+.partner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.partner .text {
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  font-size: 20px;
+  color: white;
+}
+
+.text .highlight {
+  color: #52BDE9;
+}
+
+.logo img {
+  width: 60%;
+  max-width: 500px;
+}
